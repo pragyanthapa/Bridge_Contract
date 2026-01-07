@@ -1,0 +1,10 @@
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
+contract Thapa is ERC20, Ownable{
+    constructor()ERC20("Thapa","THP"){
+
+    }
+    function mint(address to, uint256 amount)public isOwner{
+        _mint(to,amount);
+    }  
+}
